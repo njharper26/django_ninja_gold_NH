@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <title>Ninja Gold</title>
+    </head>
+    <body>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-4">
+                <h4>Your Gold: {{ count }}</h4>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col">
+                <h3>Farm</h3>
+                <p>(earn 10-20 golds)</p>
+                <a href="/process/farm" class="btn btn-outline-primary" role="buton">Find Gold!</a>
+            </div>
+            <div class="col">
+                <h3>Cave</h3>
+                <p>(earn 5-10 golds)</p>
+                <a href="/process/cave" class="btn btn-outline-secondary" role="buton">Find Gold!</a>
+            </div>
+            <div class="col">
+                <h3>House</h3>
+                <p>(earn 2-5 golds)</p>
+                <a href="/process/house" class="btn btn-outline-success" role="buton">Find Gold!</a>                
+            </div>
+            <div class="col">
+                <h3>Casino</h3>
+                <p>(earns/takes (0-50) golds)</p>
+                <a href="/process/casino" class="btn btn-outline-warning" role="buton">Find Gold!</a>                
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col">
+                <h4>Activity Log:</h4>
+                {% for act in log %}
+                <p class="{{ act.color }}">{{ act.activity }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <br>
+        <a href="/reset" class="btn btn-secondary" role="button">Reset</a>
+    </div>
+    </body>
+</html>
